@@ -1,0 +1,20 @@
+{
+    "name": "inventory-connector",
+    "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "tasks.max": "1",
+      "database.hostname": "postgres",
+      "database.port": "5432",
+      "database.user": "postgres",
+      "database.password": "password",
+      "database.dbname": "supermercado",
+      "database.server.name": "dbserver1",
+      "table.include.list": "public.detalhes_preco_quantidade_pereciveis,public.detalhes_preco_quantidade_nao_pereciveis",
+      "plugin.name": "pgoutput",
+      "database.history.kafka.bootstrap.servers": "kafka:9092",
+      "database.history.kafka.topic": "schema-changes.inventory",
+      "heartbeat.interval.ms": "10000",
+      "topic.prefix": "dbserver1"
+    }
+  }
+  
